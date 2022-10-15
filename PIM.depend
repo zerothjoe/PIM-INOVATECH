@@ -1,0 +1,14 @@
+# depslib dependency file v1.0
+1665793830 source:c:\users\joe\desktop\pim\vars.c
+
+1665862836 c:\users\joe\desktop\pim\header.h
+	<stdio.h>
+	<string.h>
+	<conio.h>
+	<windows.h>
+	<stdlib.h>
+	<stdbool.h>
+
+1665875042 source:c:\users\joe\desktop\pim\main.c
+	"header.h"
+
