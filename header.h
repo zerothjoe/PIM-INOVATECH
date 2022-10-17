@@ -6,6 +6,7 @@
 #include <conio.h>
 #include <windows.h>
 #include <stdlib.h>
+#include <locale.h>
 
 
 
@@ -45,7 +46,6 @@ char login[20];
 char senha[20];
 char ch = '\0';
 int ctecla=0;
-
 ////////////////////////////
 
 
