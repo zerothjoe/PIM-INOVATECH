@@ -21,10 +21,10 @@ int main()
   // obtendo o tempo em segundos
   time(&segundos);
 
-  // para converter de segundos para o tempo local
-  // utilizamos a função localtime
+  //converte os segundos para o tempo local
 
   data_hora_atual = localtime(&segundos);
+
   memset(login, '\0', sizeof(login));
   memset(senha, '\0', sizeof(senha));
   printf("\t\t\t\t========================================================\n");
@@ -73,10 +73,10 @@ int main()
       ////////////////////////////////////////////PROGRAMA ADMIN COMEÇA AQUI////////////////////////////////////////////////////////
 
       (strcmp(adminlog, login) == 0 && strcmp(adminpass, senha) == 0)
-  {
+  { while (loop == 0){
     system("cls");
     printf(GREEN "LOGADO COM SUCESSO\n" RESET);
-    printf("\n Menu Inicial: \n 1 Cadastro de Clientes:  \n 2 Gerenciamento de Assinaturas: \n 3 Tela de Relatorios: \n 4 Cadastro de funcionarios:\n --");
+    printf("\n Menu Inicial: \n 1 Cadastro de Clientes:  \n 2 Gerenciamento de Assinaturas: \n 3 Tela de Relatorios: \n 4 Cadastro de funcionarios: \n 5 Sair \n --");
     scanf("%d", &menu);
     switch (menu)
     {
@@ -87,21 +87,30 @@ int main()
       printf("nada pra ver aqui ainda");
       break;
     case 3:;
+    system("cls");
       FILE *relatorio;
       relatorio = fopen("relatorio.txt", "ab");
       printf("Relatorio Diario:  ");
       scanf("%s", Vrelatorio);
-      fprintf(relatorio, "________________________________________________________________________\nrelatorio do dia %d/%d/%d \n %s \n\n\n\n", data_hora_atual->tm_mday, data_hora_atual->tm_mon + 1, data_hora_atual->tm_year + 1900, Vrelatorio);
+      fprintf(relatorio, "\nrelatorio do dia %d/%d/%d: \n %s \n\n\n\n", data_hora_atual->tm_mday, data_hora_atual->tm_mon + 1, data_hora_atual->tm_year + 1900, Vrelatorio);
       fclose(relatorio);
+      printf("Relatorio do dia %d/%d/%d salvo com sucesso.\npressione qualquer tecla pra voltar ao menu ", data_hora_atual->tm_mday, data_hora_atual->tm_mon + 1, data_hora_atual->tm_year + 1900);
+      getch();
       break;
     case 4:
       printf("nada pra ver aqui ainda");
       break;
+    case 5:
+      system ("cls");
+      printf ("programa finalizado");
+      loop = 1;
+      break;
     default:
       printf("digite uma opção valida");
+
       break;
     }
-  }
+  }}
   ////////////////////////////////////////////PROGRAMA ADMIN TERMINA AQUI////////////////////////////////////////////////////////
 
   else
