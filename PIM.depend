@@ -1,7 +1,7 @@
 # depslib dependency file v1.0
 1665793830 source:c:\users\joe\desktop\pim\vars.c
 
-1666125028 c:\users\joe\desktop\pim\header.h
+1666214464 c:\users\joe\desktop\pim\header.h
 	<stdio.h>
 	<string.h>
 	<conio.h>
@@ -11,6 +11,6 @@
 	<locale.h>
 	<stdbool.h>
 
-1666125062 source:c:\users\joe\desktop\pim\main.c
+1666223245 source:c:\users\joe\desktop\pim\main.c
 	"header.h"
 

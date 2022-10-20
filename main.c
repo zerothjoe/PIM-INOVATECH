@@ -32,6 +32,7 @@ int main()
   printf("\t\t\t\t========================================================\n");
   printf("\nDigite o seu nome de usuário: ");
   scanf("%s", login);
+  getchar();
   fflush(stdin);
   printf("Digite a sua Senha: ");
   while (ctecla < 5)
@@ -78,6 +79,7 @@ int main()
     printf(GREEN "LOGADO COM SUCESSO\n" RESET);
     printf("\n Menu Inicial: \n 1 Cadastro de Clientes:  \n 2 Gerenciamento de Assinaturas: \n 3 Tela de Relatorios: \n 4 Cadastro de funcionarios: \n 5 Sair \n --");
     scanf("%d", &menu);
+    getchar();
     switch (menu)
     {
     case 1:
@@ -91,11 +93,12 @@ int main()
       FILE *relatorio;
       relatorio = fopen("relatorio.txt", "ab");
       printf("Relatorio Diario:  ");
-      scanf("%s", Vrelatorio);
+      scanf("%255[^\n]s", Vrelatorio);
+      fflush (stdin);
       fprintf(relatorio, "\nrelatorio do dia %d/%d/%d: \n %s \n\n\n\n", data_hora_atual->tm_mday, data_hora_atual->tm_mon + 1, data_hora_atual->tm_year + 1900, Vrelatorio);
       fclose(relatorio);
       printf("Relatorio do dia %d/%d/%d salvo com sucesso.\npressione qualquer tecla pra voltar ao menu ", data_hora_atual->tm_mday, data_hora_atual->tm_mon + 1, data_hora_atual->tm_year + 1900);
-      getch();
+      getchar();
       break;
     case 4:
       printf("nada pra ver aqui ainda");
