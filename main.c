@@ -77,7 +77,8 @@ int main()
   { while (loop == 0){
     system("cls");
     printf(GREEN "LOGADO COM SUCESSO\n" RESET);
-    printf("\n Menu Inicial: \n 1 Cadastro de Clientes:  \n 2 Gerenciamento de Assinaturas: \n 3 Tela de Relatorios: \n 4 Cadastro de funcionarios: \n 5 Sair \n --");
+    printf("bem vindo %s", login);
+    printf("\n Menu Inicial: \n 1 Cadastro de Clientes:  \n 2 produtos: \n 3 Relatorios: \n 4 Cadastro de funcionarios: \n 5 Sair \n --");
     scanf("%d", &menu);
     getchar();
     switch (menu)
@@ -128,7 +129,7 @@ int main()
       system("cls");
       printf(GREEN "LOGADO COM SUCESSO\n" RESET);
 
-      printf("\n Menu Inicial: \n 1 Cadastro de Clientes:  \n 2 Gerenciamento de Assinaturas: \n 3 Tela de Relatorios:");
+      printf("\n Menu Inicial: \n 1 Produtos:  \n 2 Gerenciamento de Assinaturas: \n 3 Relatorios \n 4 Sair:");
 
       ////////////////////////////////////////////PROGRAMA FUNC TERMINA AQUI////////////////////////////////////////////////////////
     }
