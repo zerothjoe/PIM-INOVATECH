@@ -71,14 +71,13 @@ int main()
 
   if
 
-      ////////////////////////////////////////////PROGRAMA ADMIN COMEÇA AQUI////////////////////////////////////////////////////////
 
       (strcmp(adminlog, login) == 0 && strcmp(adminpass, senha) == 0)
   { while (loop == 0){
     system("cls");
     printf(GREEN "LOGADO COM SUCESSO\n" RESET);
     printf("bem vindo %s", login);
-    printf("\n Menu Inicial: \n 1 Cadastro de Clientes:  \n 2 produtos: \n 3 Relatorios: \n 4 Cadastro de funcionarios: \n 5 Sair \n --");
+    printf("\n Menu Inicial: \n 1 Produtos  \n 2 cadastro de clientes \n 3 Relatorios \n 4 Cadastro de funcionarios \n 5 Sair \n --");
     scanf("%d", &menu);
     getchar();
     switch (menu)
@@ -91,17 +90,17 @@ int main()
       break;
     case 3:;
     system("cls");
-      FILE *relatorio;
-      relatorio = fopen("relatorio.txt", "ab");
+      FILE *relatorio_ptr;
+      relatorio_ptr = fopen("relatorio.txt", "a");
       printf("Relatorio Diario:  ");
       scanf("%255[^\n]s", Vrelatorio);
       fflush (stdin);
-      fprintf(relatorio, "\nrelatorio do dia %d/%d/%d: \n %s \n\n\n\n", data_hora_atual->tm_mday, data_hora_atual->tm_mon + 1, data_hora_atual->tm_year + 1900, Vrelatorio);
-      fclose(relatorio);
+      fprintf(relatorio_ptr, "\nrelatorio do dia %d/%d/%d: \n %s \n\n\n\n", data_hora_atual->tm_mday, data_hora_atual->tm_mon + 1, data_hora_atual->tm_year + 1900, Vrelatorio);
+      fclose(relatorio_ptr);
       printf("Relatorio do dia %d/%d/%d salvo com sucesso.\npressione qualquer tecla pra voltar ao menu ", data_hora_atual->tm_mday, data_hora_atual->tm_mon + 1, data_hora_atual->tm_year + 1900);
       getchar();
       break;
-    case 4:
+    case 4:;
       printf("nada pra ver aqui ainda");
       break;
     case 5:
@@ -115,33 +114,30 @@ int main()
       break;
     }
   }}
-  ////////////////////////////////////////////PROGRAMA ADMIN TERMINA AQUI////////////////////////////////////////////////////////
 
-  else
-
-  ////////////////////////////////////////////PROGRAMA FUNC COMEÇA AQUI////////////////////////////////////////////////////////
-
-  {
+else
+{
     bool exists = user_exists(login, senha);
 
     if (exists == true)
-    {
+    {getchar();
       system("cls");
       printf(GREEN "LOGADO COM SUCESSO\n" RESET);
 
-      printf("\n Menu Inicial: \n 1 Produtos:  \n 2 Gerenciamento de Assinaturas: \n 3 Relatorios \n 4 Sair:");
-
-      ////////////////////////////////////////////PROGRAMA FUNC TERMINA AQUI////////////////////////////////////////////////////////
+      printf("\n Menu Inicial: \n 1 Produtos  \n 2 Cadastro de Clientes \n 3 Relatorios \n 4 Sair");
     }
 
-    else
+    if (exists == false)
     {
       system("cls");
-      printf(RED "Usuário ou senha inválidos\n" RESET);
+      printf(RED "UsuÃ¡rio ou senha invÃ¡lidos\n" RESET);
       return 0;
     }
+
+
   }
 }
+
 
 
 

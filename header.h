@@ -49,6 +49,7 @@ char ch = '\0';
 int ctecla=0, menu=0, loop=0;
 char Vrelatorio[256];
 
+
 //////////////////////////////
 
 
@@ -56,11 +57,11 @@ char Vrelatorio[256];
 
 bool user_exists(char *user, char *password)
 {
-    FILE *file_ptr;
+    FILE *usuarios_ptr;
 
-    file_ptr = fopen("users.txt", "r");
+    usuarios_ptr = fopen("usuarios.txt", "r");
 
-    if (!file_ptr)
+    if (!usuarios_ptr)
     {
         printf("error: não foi possível abrir o arquivo de usuários.");
         return 2;
@@ -70,7 +71,7 @@ bool user_exists(char *user, char *password)
     char current_line[256];
 
     // Lê linha a linha do arquivo, e vai salvando a linha na variavel current_line
-    while (fgets(current_line, sizeof(current_line), file_ptr))
+    while (fgets(current_line, sizeof(current_line), usuarios_ptr))
     {
         // separa a linha pelo caracter |
         char *current_user = strtok(current_line, "|");
@@ -81,13 +82,15 @@ bool user_exists(char *user, char *password)
 
         if (strcmp(user, current_user) == 0 && strcmp(password, current_password) == 0)
         {
-            fclose(file_ptr);
+            fclose(usuarios_ptr);
             return true;
         }
+        else
+        fclose(usuarios_ptr);
+        return false;
+}
     }
 
-    fclose(file_ptr);
-    return false;
-}
+
 
 ///////////////////////////////////////////////////FUN��O LOG 2/////////////////////////////////////////////////////
