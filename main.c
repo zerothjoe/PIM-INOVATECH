@@ -72,8 +72,8 @@ int main()
   if
 
 
-      (strcmp(adminlog, login) == 0 && strcmp(adminpass, senha) == 0)
-  { while (loop == 0){
+    (strcmp(adminlog, login) == 0 && strcmp(adminpass, senha) == 0){
+    while (loop == 0){
     system("cls");
     printf(GREEN "LOGADO COM SUCESSO\n" RESET);
     printf("bem vindo %s", login);
@@ -83,10 +83,12 @@ int main()
     switch (menu)
     {
     case 1:
-      printf("nada pra ver aqui ainda");
+      printf("nada pra ver aqui ainda: ");
+      getch();
       break;
     case 2:
-      printf("nada pra ver aqui ainda");
+      printf("nada pra ver aqui ainda: ");
+      getch();
       break;
     case 3:;
     system("cls");
@@ -95,13 +97,14 @@ int main()
       printf("Relatorio Diario:  ");
       scanf("%255[^\n]s", Vrelatorio);
       fflush (stdin);
-      fprintf(relatorio_ptr, "\nrelatorio do dia %d/%d/%d: \n %s \n\n\n\n", data_hora_atual->tm_mday, data_hora_atual->tm_mon + 1, data_hora_atual->tm_year + 1900, Vrelatorio);
+      fprintf(relatorio_ptr, "relatorio do dia %d/%d/%d: \n %s \n\n\n\n", data_hora_atual->tm_mday, data_hora_atual->tm_mon + 1, data_hora_atual->tm_year + 1900, Vrelatorio);
       fclose(relatorio_ptr);
       printf("Relatorio do dia %d/%d/%d salvo com sucesso.\npressione qualquer tecla pra voltar ao menu ", data_hora_atual->tm_mday, data_hora_atual->tm_mon + 1, data_hora_atual->tm_year + 1900);
-      getchar();
+      getch();
       break;
     case 4:;
-      printf("nada pra ver aqui ainda");
+      ("nada pra ver aqui ainda: ");
+      getch();
       break;
     case 5:
       system ("cls");
@@ -110,7 +113,7 @@ int main()
       break;
     default:
       printf("digite uma opção valida");
-
+      getch();
       break;
     }
   }}
