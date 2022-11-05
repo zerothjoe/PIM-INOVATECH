@@ -1,63 +1,45 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <locale.h>
 
-	int main (){
 
-	int opcao,opcao1,opcao2,opcao3,opcao4,i,quant;
-
+int main(){
 	
+	
+int opcao, opcao1, opcao2, opcao3, opcao4,i,quant,op;
+
 	struct referencia
-	{
-		
+	{		
 	char nome[100],cpf[100],tel[100],email[100],end[100];
 	}
 	
 
-		
-	CA[600];
-	CA[600];
-	CA[600];
-	CA[600];
-	CA[600];
-	CA[600];
-        CA[600];
 	
+CA[600];
+CA[600];
+CA[600];
+CA[600];
+CA[600];
+CA[600];
+CA[600];
 
-		char nomef[100];
-	
-	
-	system("cls");
-	printf("Nome do Funcionario: ");
-	fflush(stdin);
-	scanf("%[^\n]s",nomef);
-	printf("Senha da InovaTech: ");
-	scanf("%d",&opcao3);
-	
-	switch(opcao3){
-	 case 18137010:
-		 	
-	while(opcao!=6){
-	while(opcao2!=1){
-	system("cls");
-	
-	printf("-----------------------------------------------------\n\n");
-	printf("\t\t\t Inovatech\n");
-	printf("-------------------------------------------------------------\n\n");
-	printf("\t\t  Seja bem vindo(a) %s\n",nomef);
-	printf("_________________________________________________________");
-	printf("1-Cadastrar\n ");
-	printf("2-Exibir Dados\n ");
-	printf("3-Alterar\n ");
-	printf("4-Excluir\n ");
-	printf("5-Informacoes do Sistema\n ");
-	printf("6-Sair\n ");
+
+
+    
+	printf("---------------------------------------------------------\n\n");
+	printf("\n1-Cadastrar\n ");
+	printf("\n2-Exibir Dados\n ");
+	printf("\n3-Alterar\n ");
+	printf("\n4-Excluir\n ");
+	printf("\n5-Sair\n ");
 	printf("---------------------------------------------------------\n\n");
 	printf("\n Qual opcao voce deseja acessar? ");
 	scanf("%d",&opcao);
-
 	
-	switch(opcao){
+	
+	
+switch(opcao){
 
 		case 1:
 			system("cls");
@@ -86,8 +68,7 @@
 	         printf("\n\n\t\t");
 	         system("pause");
 	         system("cls");
-	       
-}
+	         
 	
 	break;
 	
@@ -299,28 +280,10 @@ break;
 	break;		
 			
 }
-	}
-}
+
 	break;
 }
 }
 system("pause");
 	return 0;
 }
-
-
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-
