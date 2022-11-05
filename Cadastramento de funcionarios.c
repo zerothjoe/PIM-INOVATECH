@@ -3,28 +3,15 @@
 #include <string.h>
 #include <locale.h>
 
-
 int main(){
-	
 	
 int opcao, opcao1, opcao2, opcao3, opcao4,i,quant,op;
 
 	struct referencia
-	{		
-	char nome[100],cpf[100],tel[100],email[100],end[100];
-	}
+	{ char nome[100],cpf[100],tel[100],email[100],end[100];	}
 	
-
 	
-CA[600];
-CA[600];
-CA[600];
-CA[600];
-CA[600];
-CA[600];
-CA[600];
-
-
+CA[600];CA[600];CA[600];CA[600];CA[600];CA[600];CA[600];
 
     
 	printf("---------------------------------------------------------\n\n");
@@ -36,9 +23,7 @@ CA[600];
 	printf("---------------------------------------------------------\n\n");
 	printf("\n Qual opcao voce deseja acessar? ");
 	scanf("%d",&opcao);
-	
-	
-	
+		
 switch(opcao){
 
 		case 1:
@@ -287,3 +272,4 @@ break;
 system("pause");
 	return 0;
 }
+
