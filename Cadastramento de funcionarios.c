@@ -51,6 +51,7 @@ switch(opcao){
 	         fflush(stdin);
 	         scanf("%[^\n]s",CA [i].end);
 	         printf("\n\n\t\t");
+	         printf("Cadastro realizado com Sucesso!\n\n\n");
 	         system("pause");
 	         system("cls");
 	         
