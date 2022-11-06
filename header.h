@@ -8,7 +8,7 @@
 #include <stdlib.h>
 #include <time.h>
 #include <locale.h>
-
+#include <stdbool.h>
 
 
 #define ENTER 13    // CÓDIGO ASCII DA TECLA ENTER
@@ -19,7 +19,6 @@
 
 
 // CORES
-#include <stdbool.h>
 #define RED2        "\x1b[31m"
 #define RESET       "\x1b[0m"
 #define RED         "\e[0;31m" //cores em ANSI utilizadas
@@ -43,15 +42,25 @@
 
 char adminlog[20] = "joe";
 char adminpass[20] = "lindo";
-char login[20];
-char senha[20];
+char login[20]; login2[20];
+char senha[20]; senha2[20];
 char ch = '\0';
 int ctecla=0, menu=0, loop=0;
 char Vrelatorio[256];
+int opcao, opcao1, opcao2, opcao3, opcao4,i,quant,op;
 
 
-//////////////////////////////
 
+
+/////////////////////////////////////////////////////////////
+struct tipo_usuario{
+	char nome[50];
+	char email[50];
+	int cpf;
+	int idade;
+};
+
+ struct tipo_usuario usuario;
 
 ///////////////////////////////////////////////////FUNÇÃO LOG 2/////////////////////////////////////////////////////
 
@@ -94,3 +103,9 @@ bool user_exists(char *user, char *password)
 
 
 ///////////////////////////////////////////////////FUNÇÃO LOG 2/////////////////////////////////////////////////////
+
+
+
+
+
+
