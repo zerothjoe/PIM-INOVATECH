@@ -2,6 +2,7 @@
 
 int main()
 {
+
   struct referencia
   {
     char nome[100], cpf[100], tel[100], email[100], end[100];
@@ -95,9 +96,41 @@ int main()
       getchar();
       switch (menu)
       {
-      case 1:
-        printf("nada pra ver aqui ainda");
-        getch();
+      case 1:;
+          FILE *arq;
+    int op;
+
+    arq=fopen("estoque.txt","rb+");
+    if(arq==NULL){
+    arq=fopen("estoque.txt","wb+");
+    }
+    if(arq!=NULL){
+
+        int fim=0;
+
+
+            do{
+
+	Menu();
+            switch(opcao5)
+                {
+                case 1:
+				system("cls");
+				cadastro(arq);
+                    break;
+                case 2:
+                system("cls");
+				catalogo();
+				case 3:
+				system("cls");
+				Remover();
+                    break;
+                case 4:fim=1;
+                    break;
+                 default: printf("Opcao Invalida\n");
+                         }
+              }while (!(fim));
+        }
         break;
       case 2:
         printf("---------------------------------------------------------\n\n");
@@ -134,7 +167,7 @@ int main()
             fflush(stdin);
             scanf("%[^\n]s", CA[i].end);
             printf("\n\n\t\t");
-            printf("\n\Cadastro realizado com Sucesso!\n\n");
+            printf("\n Cadastro realizado com Sucesso!\n\n");
             system("pause");
             system("cls");
             break;
@@ -222,8 +255,8 @@ int main()
       getchar();
       system("cls");
       printf(GREEN "LOGADO COM SUCESSO\n" RESET);
-
-      printf("\n Menu Inicial: \n 1 Produtos  \n 2 Cadastro de Clientes \n 3 Relatorios \n 4 Sair");
+      printf("\n Menu Inicial: \n 1 Produtos  \n 2 cadastro de clientes");
+      printf("\n 3 Relatorios \n 4 Cadastro de funcionarios \n 5 Sair \n --");
     }
 
     if (exists == false)

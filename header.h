@@ -36,7 +36,7 @@
 #define HWHITE      "\e[0;97m"
 #define HRED        "\e[0;91m"
 
-#endif // HEADER_H_INCLUDED
+ // HEADER_H_INCLUDED
 
 ///// VARIAVEIS///////////////
 
@@ -48,8 +48,8 @@ char ch = '\0';
 int ctecla=0, menu=0, loop=0;
 char Vrelatorio[256];
 int opcao, opcao1, opcao2, opcao3, opcao4,i,quant,op;
-
-
+int produto(FILE *arq,int idProduto);
+extern int opcao5;
 
 
 /////////////////////////////////////////////////////////////
@@ -62,50 +62,15 @@ struct tipo_usuario{
 
  struct tipo_usuario usuario;
 
-///////////////////////////////////////////////////FUN«√O LOG 2/////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////
 
-bool user_exists(char *user, char *password)
-{
-    FILE *usuarios_ptr;
-
-    usuarios_ptr = fopen("usuarios.txt", "r");
-
-    if (!usuarios_ptr)
-    {
-        printf("error: n√£o foi poss√≠vel abrir o arquivo de usu√°rios.");
-        return 2;
-    }
-
-    // A linha do arquivo n√£o pode ter mais do que 256 bytes
-    char current_line[256];
-
-    // L√™ linha a linha do arquivo, e vai salvando a linha na variavel current_line
-    while (fgets(current_line, sizeof(current_line), usuarios_ptr))
-    {
-        // separa a linha pelo caracter |
-        char *current_user = strtok(current_line, "|");
-        char *current_password = strtok(NULL, "|");
-
-        // remove o \n da senha
-        current_password[strcspn(current_password, "\n")] = '\0';
-
-        if (strcmp(user, current_user) == 0 && strcmp(password, current_password) == 0)
-        {
-            fclose(usuarios_ptr);
-            return true;
-        }
-        else
-        fclose(usuarios_ptr);
-        return false;
-}
-    }
+bool user_exists(char *user, char *password);
+void Menu();
+int catalogo (void);
+void cadastro();
+int Remover(void);
 
 
+/////////////////////////////////////////////////////////////////////
 
-///////////////////////////////////////////////////FUN«√O LOG 2/////////////////////////////////////////////////////
-
-
-
-
-
-
+#endif
