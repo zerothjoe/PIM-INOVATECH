@@ -9,8 +9,9 @@
 
 
 
-int opcao5=0;
-int prx;
+int opcao5=0, prx;
+
+
 
 ////////////////////////////////////////////// STRUCT PRODUTOS
 typedef struct{
@@ -37,6 +38,8 @@ return -1;
 }
 
 
+
+
 ////////////////////////////////// MENU DE OPÇÕES
 void Menu()
 {
@@ -50,6 +53,8 @@ printf("\nEscolha uma das opcoes: \n");
 scanf("%d",&opcao5);
 
 }
+
+
 
 //////////////////////////////// CADASTRAR PRODUTOS
 void cadastro(){
@@ -92,6 +97,8 @@ void cadastro(){
     getch();}
 
 
+
+
 ///////////////////////////////////////// CATALOGO
 
 int catalogo (void)
@@ -121,6 +128,8 @@ FILE *arq;
     }getch();
     return 0;}
 
+
+
 //////////////////////////////////////REMOVER PRODUTOS
 
 int Remover(void){
@@ -134,6 +143,7 @@ int Remover(void){
         printf("Registros removidos!");
         fclose(arq);}
     getch();}
+
 
 
 /////////////////////////////////LOGIN DOS FUNCIONARIOS
@@ -168,10 +178,9 @@ bool user_exists(char *user, char *password)
             fclose(usuarios_ptr);
             return true;
         }
-        else
+    }
         fclose(usuarios_ptr);
         return false;
-}
     }
 
 #endif

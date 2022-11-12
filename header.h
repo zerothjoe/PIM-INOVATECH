@@ -38,13 +38,10 @@
 
 
 ///////////////////////////////VARIAVEIS
-char adminlog[20] = "joe";
-char adminpass[20] = "lindo";
-char login[20], login2[20];
-char senha[20], senha2[20];
-char ch = '\0';
+char adminlog[20] = "joe", login[20], login2[20];
+char adminpass[20] = "lindo", senha[20], senha2[20];
 int ctecla=0, menu=0, loop=0;
-char Vrelatorio[256];
+char Vrelatorio[256], ch = '\0';
 int opcao, opcao1, opcao2, opcao3, opcao4,i,quant,op;
 int produto(FILE *arq,int idProduto);
 extern int opcao5;
@@ -62,7 +59,6 @@ struct tipo_usuario{
  struct tipo_usuario usuario;
 
 /////////////////////////////////////FUNÇÕES
-
 bool user_exists(char *user, char *password);
 void Menu();
 int catalogo (void);
