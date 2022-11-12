@@ -11,7 +11,8 @@
 
 int opcao5=0;
 int prx;
-////// struct dos produtos
+
+////////////////////////////////////////////// STRUCT PRODUTOS
 typedef struct{
         int idProduto;
         int estoque;
@@ -34,7 +35,9 @@ tipoproduto tp;
                 }
 return -1;
 }
-////// menu opçoes
+
+
+////////////////////////////////// MENU DE OPÇÕES
 void Menu()
 {
 system("cls");
@@ -48,38 +51,7 @@ scanf("%d",&opcao5);
 
 }
 
-
-// produtos
-
-int catalogo (void)
-{
-FILE *arq;
-    arq = fopen("estoque.txt","rb+");
-    if (!arq)
-        return 1;
-    else
-    { tipoproduto tp;
-    int i=0;
-    int voltar;
-        struct tipoproduto;
-        voltar= fread(&tp,sizeof(tp),1,arq);
-		while(voltar==1){
-
-        {
-        printf("------------------------------------------------------------");
-        printf("\nID do Produto: %d\n",tp.idProduto);
-        printf("\nNome: %s\n",tp.nome);
-        printf("\nEstoque: %d\n",tp.estoque);
-        printf("\nPreco: R$%.2f\n",tp.valor);}
-		i++;
-		voltar= fread(&tp,sizeof(tp),1,arq);
-        }
-        fclose(arq);
-    }getch();
-    return 0;}
-
-// cadastrar produtos
-
+//////////////////////////////// CADASTRAR PRODUTOS
 void cadastro(){
     tipoproduto tp;
     int voltar;
@@ -120,6 +92,37 @@ void cadastro(){
     getch();}
 
 
+///////////////////////////////////////// CATALOGO
+
+int catalogo (void)
+{
+FILE *arq;
+    arq = fopen("estoque.txt","rb+");
+    if (!arq)
+        return 1;
+    else
+    { tipoproduto tp;
+    int i=0;
+    int voltar;
+        struct tipoproduto;
+        voltar= fread(&tp,sizeof(tp),1,arq);
+		while(voltar==1){
+
+        {
+        printf("------------------------------------------------------------");
+        printf("\nID do Produto: %d\n",tp.idProduto);
+        printf("\nNome: %s\n",tp.nome);
+        printf("\nEstoque: %d\n",tp.estoque);
+        printf("\nPreco: R$%.2f\n",tp.valor);}
+		i++;
+		voltar= fread(&tp,sizeof(tp),1,arq);
+        }
+        fclose(arq);
+    }getch();
+    return 0;}
+
+//////////////////////////////////////REMOVER PRODUTOS
+
 int Remover(void){
     int rp;
     printf("Remover todos os registros?");
@@ -132,6 +135,8 @@ int Remover(void){
         fclose(arq);}
     getch();}
 
+
+/////////////////////////////////LOGIN DOS FUNCIONARIOS
 
 bool user_exists(char *user, char *password)
 {
